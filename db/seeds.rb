@@ -13,37 +13,34 @@
 
 require 'roo'
 
-Snippet.destroy_all
+# Snippet.destroy_all
 
 seed_file = Roo::Spreadsheet.open('./Book1.xlsx')
 
-strengths = seed_file.sheet('strengths')
+# strengths = seed_file.sheet('strengths')
 weaknesses = seed_file.sheet('aods')
 
 
 # Snippet Factory
 
-def snippet_factory(sheet)
+def snippet_factory(sheet, strength_or_aod)
   sheet.each(snippet: 'Snippet',
                competency: 'Competency',
                exercise_type: 'Context') do |record|
 
-  Snippet.create(content: record[:snippet],
-                 exercise_type: record[:context],
-                 competency: record[:competency] )
+    Snippet.create(content: record[:snippet],
+                   exercise_type: record[:exercise_type],
+                   competency: record[:competency],
+                   content_type: strength_or_aod )
   end
 end
 
-
-# Create Strengths Snippets
 puts "Creating Strengths"
 
-snippet_factory(strengths)
+# snippet_factory(strengths, "strength")
 
-# Create Areas of Development
-puts "Creating Strengths"
-snippet_factory(weaknesses)
-
+puts "Creating Areas of Development"
+snippet_factory(weaknesses, "area of development")
 
 puts "Done - Created #{ Snippet.all.count } snippets"
 
