@@ -1,21 +1,24 @@
 <div class="navbar-wagon">
   <!-- Logo -->
- <h5> 🔍 Snippet Finder </h5>
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= form_tag :root, class: "form-inline", method: :get  do %>
+  <div class="container mt-1">
+  <div class="row centered">
+    <div class="col-sm-2">
+      <h5 class='logo'> 🔍 <span>Snippet Finder</span>  </h5>
+    </div>
+  <div class="col-sm-8">
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <%= form_tag :root, class: "form-inline full-width", method: :get  do %>
       <%= text_field_tag(:query, @query, {class: "query-input", data: { query: @query }, placeholder: "search for a snippet"} ) %>
-     <%#= submit_tag("Search", {class: "btn btn-lighter"}) %>
-  <% end %>
+      <%#= submit_tag("Search", {class: "btn btn-lighter"}) %>
+      <% end %>
+    </div>
   </div>
+    <div class="col-sm-2">
+  <!--     <ul class='navbar-nav'>
+        <li><a href="#" class="nav-item">Tips & Tricks</a></li>
+      </ul> -->
+    </div>
 
-    <!-- Profile picture with dropdown list -->
-
-        <ul class='navbar-nav'>
-          <li><a href="#" class="nav-item">Tips & Tricks</a></li>
-        </ul>
-
-
-
-
+  </div>
+  </div>
 </div>

@@ -4,42 +4,19 @@
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <% if @query && @snippets.count > 0 %>
-      <% @snippets.each do |snippet| %>
-      <div class='card mb-5'>
-        <div contenteditable="false" class="card-header info">
-          <p> <%= snippet.competency %></p>
-          <p> <%= snippet.exercise_type %></p>
-          <% if snippet.content_type == "strength" %>
-          <span class="text-success"> <%= snippet.content_type.capitalize  %> </span>
-          <% else %>
-          <span class="text-danger"> <%= snippet.content_type.capitalize  %> </span>
-          <% end %>
-        </div>
-        <div contenteditable="true" class="card-body">
-          <p class="card-text"> <%= snippet.content %> </p>
-        </div>
-      </div>
-      <% end %>
-
+        <% @snippets.each do |snippet| %>
+          <%= render partial: 'card', locals: { snippet: snippet } %>
+        <% end %>
       <% elsif @query && @snippets.nil?  %>
-      <div class="card text-center">
-        <div class="card-body">
-          <h5> Sorry! No results to show </h5>
-        </div>
-      </div>
-
+        <%= render partial: 'no_results' %>
       <% else %>
-      <div class="card text-center">
-        <div class="card-body">
-          <h5> Welcome to the app </h5>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5> Welcome to the app </h5>
+          </div>
         </div>
-      </div>
       <% end %>
-
-
     </div>
-
-
   </div>
 </div>
 

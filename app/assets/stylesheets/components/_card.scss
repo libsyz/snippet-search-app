@@ -1,0 +1,40 @@
+
+.snippet-card {
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
+}
+
+
+.card-info {
+  padding: 0px 40px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F9F9F9;
+  border-bottom: none;
+}
+
+.card-info-text {
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.copy-button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.text-aod {
+  color: #BA5656;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.text-strength {
+  color: #6E9764;
+  font-weight: bold;
+  font-size: 13px;
+}
