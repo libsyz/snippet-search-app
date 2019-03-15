@@ -7,6 +7,7 @@ const wordsArray = input.dataset.query.split(' ');
 console.log(wordsArray);
 
 snippets.forEach((snippet) => {
+
   console.log(input.dataset);
   console.dir(snippet);
 
