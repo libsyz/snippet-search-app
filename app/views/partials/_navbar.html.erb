@@ -2,10 +2,10 @@
   <!-- Logo -->
   <div class="container mt-1">
   <div class="row flexify">
-    <div class="col-sm-2">
-      <h5 class='logo'> 🔍 <span>Snippet Finder</span>  </h5>
+    <div class="col-md-2">
+      <h5 class='logo d-none d-sm-block'> 🔍 <span class="d-xs-none">Snippet Finder</span>  </h5>
     </div>
-  <div class="col-sm-8">
+  <div class="col-md-8">
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <%= form_tag :root, class: "form-inline full-width", method: :get  do %>
       <%= text_field_tag(:query, @query, {class: "query-input", data: { query: @query }, placeholder: "search for a snippet"} ) %>
@@ -13,7 +13,7 @@
       <% end %>
     </div>
   </div>
-    <div class="col-sm-2">
+    <div class="col-md-2 d-none d-sm-block">
       <ul class='navbar-nav'>
 
         <p class="results-display"> <%= "#{snippets.count} snippets found" if snippets %>  </p>
