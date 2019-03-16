@@ -3,7 +3,6 @@ class PagesController < ApplicationController
     if params[:query].present?
       @query = params[:query]
       @snippets = Snippet.global_search(@query)
-
     end
   end
 end

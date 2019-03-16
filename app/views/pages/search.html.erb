@@ -4,20 +4,29 @@
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <% if @query && @snippets.count > 0 %>
-        <% @snippets.each do |snippet| %>
-          <%= render partial: 'card', locals: { snippet: snippet } %>
-        <% end %>
-      <% elsif @query && @snippets.nil?  %>
-        <%= render partial: 'no_results' %>
-      <% else %>
-        <div class="card text-center">
-          <div class="card-body">
-            <h5> Welcome to the app </h5>
-          </div>
-        </div>
+      <% @snippets.each do |snippet| %>
+      <%= render partial: 'card', locals: { snippet: snippet } %>
       <% end %>
-    </div>
-  </div>
+      <% elsif @query && @snippets.count == 0 %>
+      <div class="card snippet-card">
+        <div class="card-header">
+          <h5> Sorry, no matches found 😢 </h5>
+         <p> Try the tips below to refine your search </p>
+       </div>
+       <%= render partial: 'no_results' %>
+     </div>
+     <% else %>
+     <div class="card snippet-card">
+      <div class="card-header">
+       <h5> Welcome to Snippet Finder! 🙌 </h5>
+       <p> 400+ snippets to speed up your report writing </p>
+     </div>
+     <%= render partial: 'no_results' %>
+   </div>
+   <% end %>
+
+ </div>
+</div>
 </div>
 
 
