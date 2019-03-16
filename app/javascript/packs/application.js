@@ -1,12 +1,13 @@
 import "bootstrap";
-import "clipboard";
+import ClipboardJS from 'clipboard/dist/clipboard.min';
 
 const input = document.querySelector('.query-input')
 const snippets = document.querySelectorAll('.card-text');
 const wordsArray = input.dataset.query.split(' ');
 console.log(wordsArray);
 
-const clipboard = new ClipboardJS('.query-input')
+const clipboard = new ClipboardJS('#id-test');
+console.log(clipboard);
 
 snippets.forEach((snippet) => {
 
