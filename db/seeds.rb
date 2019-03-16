@@ -13,20 +13,20 @@
 
 require 'roo'
 
-# Snippet.destroy_all
+Snippet.destroy_all
 
-seed_file = Roo::Spreadsheet.open('./Book1.xlsx')
+seed_file1 = Roo::Spreadsheet.open('./Book1.xlsx')
+seed_file2 = Roo::Spreadsheet.open('./Book1.xlsx')
 
-# strengths = seed_file.sheet('strengths')
-weaknesses = seed_file.sheet('aods')
-
+strengths = seed_file1.sheet('strengths')
+weaknesses = seed_file2.sheet('aods')
 
 # Snippet Factory
 
 def snippet_factory(sheet, strength_or_aod)
   sheet.each(snippet: 'Snippet',
-               competency: 'Competency',
-               exercise_type: 'Context') do |record|
+             competency: 'Competency',
+             exercise_type: 'Context') do |record|
 
     Snippet.create(content: record[:snippet],
                    exercise_type: record[:exercise_type],
@@ -37,7 +37,7 @@ end
 
 puts "Creating Strengths"
 
-# snippet_factory(strengths, "strength")
+snippet_factory(strengths, "strength")
 
 puts "Creating Areas of Development"
 snippet_factory(weaknesses, "area of development")
