@@ -4,8 +4,8 @@
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <% if @query && @snippets.count > 0 %>
-      <% @snippets.each do |snippet| %>
-      <%= render partial: 'card', locals: { snippet: snippet } %>
+      <% @snippets.each_with_index do |snippet, index| %>
+      <%= render partial: 'card', locals: { snippet: snippet, index: index } %>
       <% end %>
       <% elsif @query && @snippets.count == 0 %>
       <div class="card snippet-card">

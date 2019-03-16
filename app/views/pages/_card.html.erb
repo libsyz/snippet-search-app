@@ -3,17 +3,17 @@
   <div contenteditable="false" class="card-header card-info">
     <div class="card-info-left">
       <% if snippet.content_type == "strength" %>
-      <p class="card-info-text text-strength"> <%= snippet.content_type.capitalize  %></p>
+      <p class="card-info-text text-strength"> <%= snippet.content_type.capitalize  %> </p>
       <% else %>
       <p class="card-info-text text-aod"> <%= snippet.content_type.capitalize %></p>
       <% end %>
       <p class="card-info-text text-card-header"> <%= snippet.competency %> - <%= snippet.exercise_type %></p>
     </div>
     <div class="card-info-copy">
-      <div class="btn btn-outline-primary copy-button"> Copy </div>
+      <div class="btn btn-outline-primary copy-button" data-clipboard-target="#snippet-number-<%=index.to_s%>"> Copy </div>
     </div>
   </div>
   <div contenteditable="true" class="card-body">
-    <p class="card-text"> <%= snippet.content %> </p>
+    <p id="snippet-number-<%=index.to_s%>" class="card-text"> <%= snippet.content %> </p>
   </div>
 </div>
