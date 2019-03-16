@@ -1,10 +1,12 @@
 import "bootstrap";
-
+import "clipboard";
 
 const input = document.querySelector('.query-input')
 const snippets = document.querySelectorAll('.card-text');
 const wordsArray = input.dataset.query.split(' ');
 console.log(wordsArray);
+
+const clipboard = new ClipboardJS('.query-input')
 
 snippets.forEach((snippet) => {
 
@@ -16,11 +18,6 @@ snippets.forEach((snippet) => {
       snippet.innerHTML = snippet.innerHTML.replace(word, `<i class="highlighted">${word}</i>`)
     }
   })
-  // break the data set into an array of words
-  // iterate through each snippet
-  // if any of the words is contained within the snippet
-  // highlight
-
-
-
 })
+
+
