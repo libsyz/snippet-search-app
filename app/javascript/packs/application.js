@@ -14,7 +14,7 @@ console.log(wordsArray);
 textSnippets.forEach((snippet) => {
     wordsArray.forEach((word) => {
       if (snippet.innerText.includes(word) ) {
-        snippet.innerHTML = snippet.innerHTML.replace(word, `<i class="highlighted">${word}</i>`)
+        snippet.innerHTML = snippet.innerHTML.replace(word, `<mark class="highlighted">${word}</mark>`)
     }
   })
 })
