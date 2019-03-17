@@ -23,7 +23,7 @@ seed_file2 = Roo::Spreadsheet.open('./Book1.xlsx')
 
 strengths = seed_file1.sheet('strengths')
 weaknesses = seed_file2.sheet('aods')
-NAMES_TO_MASK = ['Frederic', 'Tiago', 'Eric', 'Janette', 'Jonas', 'Deborah', 'Manuela', 'Sandra', 'Sammy', 'Praveen', 'Vincenzo', 'Shafik', 'Anneline', 'Vincent', 'Audrey', 'Mario', 'Hatem', 'Aly', 'Nora', 'Joao', 'Simon', 'Paula', 'Christoph', 'Sebastian', 'Attila', 'Laetitia', 'Duncan', 'Charl', 'Tiffay', 'Filipe', 'Patrick', 'Toni', 'Frank', 'Kenon', 'Kenan', 'Ulrich', 'Guido', 'Giorgos']
+NAMES_TO_MASK = ['Frederic', 'Tiago', 'Eric', 'Janette', 'Jonas', 'Deborah', 'Manuela', 'Sandra', 'Sammy', 'Praveen', 'Vincenzo', 'Shafik', 'Anneline', 'Vincent', 'Audrey', 'Mario', 'Hatem', 'Aly', 'Nora', 'Joao', 'Simon', 'Paula', 'Christoph', 'Sebastian', 'Attila', 'Laetitia', 'Duncan', 'Charl', 'Tiffany', 'Filipe', 'Patrick', 'Toni', 'Frank', 'Kenon', 'Kenan', 'Ulrich', 'Guido', 'Giorgos']
 
 # Snippet Factory
 

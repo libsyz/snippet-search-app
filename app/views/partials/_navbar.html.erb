@@ -16,7 +16,7 @@
     <div class="col-md-2 d-none d-sm-block">
       <ul class='navbar-nav'>
 
-        <p class="results-display"> <%= "#{snippets.count} snippets found" if snippets %>  </p>
+        <p class="results-display"> <%= "#{pluralize snippets.count, "snippet" } found" if snippets %>  </p>
       </ul>
     </div>
 
