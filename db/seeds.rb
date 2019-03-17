@@ -12,6 +12,9 @@
     # t.string "competency"
 
 require 'roo'
+require 'yaml'
+
+
 
 Snippet.destroy_all
 
@@ -20,15 +23,25 @@ seed_file2 = Roo::Spreadsheet.open('./Book1.xlsx')
 
 strengths = seed_file1.sheet('strengths')
 weaknesses = seed_file2.sheet('aods')
+NAMES_TO_MASK = ['Frederic', 'Tiago', 'Eric', 'Janette', 'Jonas', 'Deborah', 'Manuela', 'Sandra', 'Sammy', 'Praveen', 'Vincenzo', 'Shafik', 'Anneline', 'Vincent', 'Audrey', 'Mario', 'Hatem', 'Aly', 'Nora', 'Joao', 'Simon', 'Paula', 'Christoph', 'Sebastian', 'Attila', 'Laetitia', 'Duncan', 'Charl', 'Tiffay', 'Filipe', 'Patrick', 'Toni', 'Frank', 'Kenon', 'Kenan', 'Ulrich', 'Guido', 'Giorgos']
 
 # Snippet Factory
+
+def mask_snippet(snippet_text, names_to_mask)
+  names_to_mask.each do |name|
+    snippet_text = snippet_text.gsub name, "Participant" if snippet_text.include? name
+end
+  snippet_text
+end
+
+
 
 def snippet_factory(sheet, strength_or_aod)
   sheet.each(snippet: 'Snippet',
              competency: 'Competency',
              exercise_type: 'Context') do |record|
-
-    Snippet.create(content: record[:snippet],
+    snippet_content = mask_snippet(record[:snippet], NAMES_TO_MASK)
+    Snippet.create(content: snippet_content,
                    exercise_type: record[:exercise_type],
                    competency: record[:competency],
                    content_type: strength_or_aod )

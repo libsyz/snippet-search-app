@@ -9,14 +9,12 @@ new ClipboardJS(copyButtons);
 const wordsArray = input.dataset.query.split(' ');
 console.log(wordsArray);
 
-
-
 // primitive text highlighter
 
 textSnippets.forEach((snippet) => {
-  wordsArray.forEach((word) => {
-    if (snippet.innerText.includes(word) ) {
-      snippet.innerHTML = snippet.innerHTML.replace(word, `<i class="highlighted">${word}</i>`)
+    wordsArray.forEach((word) => {
+      if (snippet.innerText.includes(word) ) {
+        snippet.innerHTML = snippet.innerHTML.replace(word, `<i class="highlighted">${word}</i>`)
     }
   })
 })
