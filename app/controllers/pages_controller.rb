@@ -1,8 +1,12 @@
 class PagesController < ApplicationController
   def search
-    if params[:query].present?
-      @query = params[:query]
-      @snippets = Snippet.global_search(@query)
-    end
+    fetch_snippets if params[:query].present?
+  end
+
+  def fetch_snippets
+    @query = params[:query]
+    @snippets = Snippet.global_search(@query)
   end
 end
+
+
