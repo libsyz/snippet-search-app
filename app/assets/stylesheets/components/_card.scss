@@ -4,6 +4,10 @@
   box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
+// card-header overwrites bootstrap class
+.card-header {
+  padding: 20px 40px;
+}
 
 .card-info {
   padding: 0px 40px;
