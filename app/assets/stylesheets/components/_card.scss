@@ -39,3 +39,12 @@
   font-weight: bold;
   font-size: 13px;
 }
+
+.card-body {
+  padding: 20px 40px;
+}
+
+.card-body:focus {
+  outline-color: #BADA55;
+  outline-width: 2px;
+}
